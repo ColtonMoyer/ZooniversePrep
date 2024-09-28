@@ -19,10 +19,10 @@ if (!dir.exists(temp_dir)) {
 # List all JPEG files in the source directory
 jpeg_files <- list.files(source_dir, pattern = "\\.JPG$", full.names = TRUE)
 
-# Set the target size in bytes (1000 KB)
+# Set the target size in bytes (1000 KB or 1MB), Zooniverse will not accept files larger than 1MB
 target_size <- 1000 * 1024  # 1000 KB in bytes
 
-# Process each file
+# Loop to iterate through every file in directory
 for (file in jpeg_files) {
   output_file <- file.path(dest_dir, basename(file))
   
@@ -59,7 +59,7 @@ for (file in jpeg_files) {
     file.remove(temp_file)
   }
   
-  # Report remaining number of files in the source directory
+  # Report remaining number of files in the source directory, --> countdown
   remaining_files <- length(jpeg_files) - (which(jpeg_files == file) + 1)
   cat("Remaining files in source directory:", remaining_files, "\n")
 }
