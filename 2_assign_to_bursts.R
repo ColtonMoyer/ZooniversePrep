@@ -78,5 +78,5 @@ if (!dir.exists(dest_dir)) {
   dir.create(dest_dir)
 }
 #getwd()
-write.csv(burst.list, file='E:/R/CameraImageClassification/210renamed/210/resized/SMCT_210_bursts.csv', row.names=FALSE) #this file will needed to be uploaded with the 
+write.csv(burst.list, file='E:/R/CameraImageClassification/210renamed/210resized/SMCT_210_bursts.csv', row.names=FALSE) #this file will needed to be uploaded with the 
 
